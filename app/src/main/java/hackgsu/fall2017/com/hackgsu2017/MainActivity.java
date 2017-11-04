@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TimePicker;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +18,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        final TimePicker test = (TimePicker) findViewById(R.id.timePicker);
+
+        final int Hour = 4;
+        final int Minute = 35;
+
+
+        FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab2);
+        fab2.setOnClickListener(new View.OnClickListener()
+        {
+
+
+            public void onClick(View view) {
+
+                test.setCurrentHour(Hour);
+                test.setCurrentMinute(Minute);
+            }
+        });
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
